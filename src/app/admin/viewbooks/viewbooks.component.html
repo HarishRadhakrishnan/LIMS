@@ -1,0 +1,15 @@
+<div class="container">
+    <ul class="bklist">
+      <li *ngFor="let book of books | orderBy: 'category'">
+        <div class="bktitle">{{ book.key }}</div>
+        <div class="thumbnailParent">
+          <div class="thumbnail" *ngFor="let l of book.value">
+             <img  [src]="l.image">
+             <div class="thumbnailTitle">{{l.title}}</div> <br>
+             <button class="btn del" (click)="deleteBookAdmin(l.id)">Delete</button>
+         </div>
+       </div>
+      </li>
+    </ul>
+    </div>
+    

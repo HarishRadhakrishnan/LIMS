@@ -1,0 +1,18 @@
+.thumbnailParent{
+	display : flex;
+	cursor: pointer;
+}
+.thumbnail{
+	margin-right: 22px;
+	text-align: center;
+}
+.bklist{
+	font-size: 16px;
+	list-style: none;
+}
+.bktitle{
+	font-weight: bold;
+}
+.del{
+	width: 100%;
+}

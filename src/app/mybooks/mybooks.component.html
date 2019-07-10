@@ -1,0 +1,21 @@
+<div class="container">
+    <div *ngIf="mybooks.length == 0">
+        <p>
+            No books found!
+        </p>
+    </div>
+    <ul class="mybooklist">
+      <li *ngFor="let book of mybooks">
+        <div class="row thumbnail">
+          <div class="col-md-4">
+              <img class="img" src="{{book.image}}">
+          </div>
+          <div class="col-md-8 request">
+            <h5>{{book.title}}</h5>
+            <p>{{book.description}}</p>
+            <button class="btn btn-primary" (click)="returnBook(book.id)">Return</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+</div>

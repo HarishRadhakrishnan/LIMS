@@ -1,0 +1,17 @@
+<div class="container">
+  <div *ngIf="isLoggedIn">
+    <p>
+        {{ user_name }}
+    </p>
+  </div>
+  <div *ngIf="isAdmin == 'admin'">
+    <p>
+       Admin
+    </p>
+  </div>
+  <div *ngIf="!isLoggedIn && !(isAdmin == 'admin')">
+      <p>
+         No data found
+      </p>
+    </div>
+</div>

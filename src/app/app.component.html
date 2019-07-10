@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="conatiner">
+    <nav class="navbar navbar-top">
+        <div class="navbar-header" (click)="home()">
+            <p class="header">Library!</p>
+        </div>
+        <div>
+            <p class="navbar-text" (click)="myBooks()"><span class="glyphicon glyphicon-book"></span> My Books</p>
+        </div>
+        <div>
+            <p class="navbar-text" (click)="myProfile()"><span class="glyphicon glyphicon-user"></span> My Profile</p>
+        </div>
+        <!-- <div *ngIf="isLoggedIn">
+            <p class="navbar-text"><span class="glyphicon glyphicon-user"></span>
+                Logged In: {{ user_name }}
+            </p>
+        </div>
+        <div *ngIf="!isLoggedIn">
+            <p class="navbar-text"><span class="glyphicon glyphicon-user"></span>
+                Logged Out!
+            </p>
+        </div> -->
+        <div>
+            <button class="navbar-right btn-default logout" (click)="logout()">Logout</button>
+        </div>
+    </nav>
+    <router-outlet></router-outlet>
+</div>
+
+

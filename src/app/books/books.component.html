@@ -1,0 +1,23 @@
+<div class="container">
+<div class="col-md-12 searchbox">
+  <div class="row">
+    <div class="col-md-1">
+        <div class="search">Search :</div>
+    </div>
+    <div class="col-md-11">
+        <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search by book title..."/>
+    </div>
+  </div>
+</div>
+<ul class="bklist">
+  <li *ngFor="let book of books | groupBy: 'category'">
+    <div class="bktitle">{{ book.key }}</div>
+    <div class="thumbnailParent">
+      <div (click) = "selectedBook(l.id)" class="thumbnail" *ngFor="let l of book.value | filter:searchText">
+         <img  [src]="l.image">
+         <div class="thumbnailTitle">{{l.title}}</div> <br>
+     </div>
+   </div>
+  </li>
+</ul>
+</div>

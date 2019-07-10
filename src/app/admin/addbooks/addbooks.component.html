@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="col-lg-12">
+      <h3>Add Books</h3>
+      <label>Enter book ISBN No. For ex: 9789295055025</label>
+      <form class="form-inline" (ngSubmit)="isbnFun()">
+        <input class="form-control" [(ngModel)]="isbnValue" name="isbnValue">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="col-lg-12" *ngIf="booksData">
+        <div class="row col-lg-2">
+          <img [src]="bookDetails.Image">
+        </div>
+        <form class="col-lg-8">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" 
+            name="Title" 
+            class="form-control"
+            placeholder="Enter book title" 
+            [(ngModel)]="bookDetails.title"/>
+          </div>
+          <div class="form-group">
+            <label>Author</label>
+            <input type="text" 
+            class="form-control authorColor" 
+            name="Author"
+            placeholder="Enter author name" 
+            [(ngModel)]="bookDetails.author"/>
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <input type="text" 
+            class="form-control" 
+            name="Category"
+            placeholder="Enter Category" 
+            [(ngModel)]="bookDetails.category"/>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea rows="8" 
+            class="form-control"
+            name="Description"
+            placeholder="Enter description" 
+            [(ngModel)]="bookDetails.description" 
+            style="text-align: justify;">
+            </textarea>
+          </div>
+          <div class="form-group">
+            <label>Published date</label>
+            <input type="text" 
+            class="form-control" 
+            name="PublishedOn"
+            placeholder="Enter published year" 
+            [(ngModel)]="bookDetails.publishedOn"/>
+          </div>
+          
+          <div class="form-group">
+            <label>Publisher</label>
+            <input type="text" 
+            class="form-control" 
+            name="Publisher"
+            placeholder="enter Publisher name" 
+            [(ngModel)]="bookDetails.publisher"/>
+          </div>
+        </form>
+        <div class="col-lg-2">
+          <label>Quantity</label>
+          <input style="margin-bottom: 10px" 
+          type="number"
+          [(ngModel)]="quantity"
+          placeholder="enter Qty" 
+          class="form-control" 
+          name="">
+          <button class="btn col-lg-12 orangeBtn"
+          (click)="addBook()">Add Book</button>
+        </div>
+      </div>
+</div>
